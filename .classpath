@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/WPILib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/WPILib-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/wpiutil.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/wpiutil-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/opencv.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/ntcore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CC362/wpilib/java/current/lib/cscore.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

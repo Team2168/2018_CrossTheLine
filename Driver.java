@@ -1,3 +1,12 @@
+//import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+//import edu.wpi.first.wpilibj.SendableBase;
+//import edu.wpi.first.wpilibj.SendableBase;
+//import edu.wpi.first.wpilibj.PWM;
+//import edu.wpi.first.wpilibj.SafePWM;
+//import edu.wpi.first.wpilibj.PWMSpeedController;
+//import edu.wpi.first.wpilibj.*;
+//import edu.wpi.first.wpilibj.VictorSP;
+
 //Driver.java will be utilized to test our code
 //==============================================================================
 /**
@@ -27,11 +36,49 @@ public class Driver
       while (iteration<750)
       {
         /// Place function to be tested between here...
-
+    	VictorSP leftmotor = new VictorSP(0);
+    	VictorSP rightmotor = new VictorSP(3);
+    	drive(leftmotor, rightmotor, 0.10, 0.10, "right", 250);
         /// ... and here!
         iteration++;
         /// Sleep the thread for 20ms to simulate iteration time of RoboRio
         Thread.sleep(20);
       }
     }
+  
+  
+  static int counter = 0;
+  
+  public static void drive(VictorSP left, VictorSP right, double leftspeed, double rightspeed, String reverse, int durationOfTravel) {
+	  
+	  if(counter<=durationOfTravel) {
+		  
+		  if(reverse.equalsIgnoreCase("left"))
+			  leftspeed = -leftspeed;
+		  left.set(leftspeed);
+		  
+		  if(reverse.equalsIgnoreCase("right"))
+			  rightspeed = -rightspeed;
+		  right.set(rightspeed);
+		  
+		  System.out.println("The robot is moving.");
+		  
+	  }
+	  else {
+		  
+		  left.set(0);
+		  right.set(0);
+		  
+		  System.out.println("The robot has stopped.");
+		  
+	  }
+	  
+	  counter++;
+	  System.out.format("%d%n", counter);
+	  //System.out.println(counter);
+	  
+  }
+  
+  
+  
 }
