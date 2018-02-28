@@ -1,12 +1,3 @@
-//import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-//import edu.wpi.first.wpilibj.SendableBase;
-//import edu.wpi.first.wpilibj.SendableBase;
-//import edu.wpi.first.wpilibj.PWM;
-//import edu.wpi.first.wpilibj.SafePWM;
-//import edu.wpi.first.wpilibj.PWMSpeedController;
-//import edu.wpi.first.wpilibj.*;
-//import edu.wpi.first.wpilibj.VictorSP;
-
 //Driver.java will be utilized to test our code
 //==============================================================================
 /**
@@ -75,7 +66,6 @@ public class Driver
 	  
 	  counter++;
 	  System.out.format("%d%n", counter);
-	  //System.out.println(counter);
 	  
   }
   
