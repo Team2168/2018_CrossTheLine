@@ -23,6 +23,5 @@ public class VictorSP
 	public void set(double speed) {
 		System.out.format("The speed is %.2f and the pin is %d%n", speed, motorPin);
 	}
-
 	
 }

@@ -27,9 +27,25 @@ public class Driver
       while (iteration<750)
       {
         /// Place function to be tested between here...
-    	VictorSP leftmotor = new VictorSP(0);
-    	VictorSP rightmotor = new VictorSP(3);
-    	drive(leftmotor, rightmotor, 0.10, 0.10, "right", 250);
+    	VictorSP leftmotor1 = new VictorSP(0);
+    	VictorSP leftmotor2 = new VictorSP(1);
+    	VictorSP leftmotor3 = new VictorSP(2);
+    	
+    	VictorSP rightmotor1 = new VictorSP(3);
+    	VictorSP rightmotor2 = new VictorSP(4);
+    	VictorSP rightmotor3 = new VictorSP(5);
+    	
+    	VictorSP[] leftmotors = new VictorSP[3];
+    	leftmotors[0] = leftmotor1;
+    	leftmotors[1] = leftmotor2;
+    	leftmotors[2] = leftmotor3;
+    	
+    	VictorSP[] rightmotors = new VictorSP[3];
+    	rightmotors[0] = rightmotor1;
+    	rightmotors[1] = rightmotor2;
+    	rightmotors[2] = rightmotor3;
+    	
+    	drive(3, leftmotors, rightmotors, 0.10, 0.10, "right", 250);
         /// ... and here!
         iteration++;
         /// Sleep the thread for 20ms to simulate iteration time of RoboRio
@@ -39,26 +55,31 @@ public class Driver
   
   
   static int counter = 0;
-  
-  public static void drive(VictorSP left, VictorSP right, double leftspeed, double rightspeed, String reverse, int durationOfTravel) {
+
+  // number_of_motors is the number of motors per side, not in total
+  public static void drive(int number_of_motors, VictorSP[] left, VictorSP[] right, double leftspeed, double rightspeed, String reverse, int durationOfTravel) {
 	  
 	  if(counter<=durationOfTravel) {
 		  
-		  if(reverse.equalsIgnoreCase("left"))
-			  leftspeed = -leftspeed;
-		  left.set(leftspeed);
-		  
-		  if(reverse.equalsIgnoreCase("right"))
-			  rightspeed = -rightspeed;
-		  right.set(rightspeed);
-		  
-		  System.out.println("The robot is moving.");
+		  for (int i = 0; i < number_of_motors; i++) {
+			  if(reverse.equalsIgnoreCase("left"))
+				  leftspeed = -leftspeed;
+			  left[i].set(leftspeed);
+			  
+			  if(reverse.equalsIgnoreCase("right"))
+				  rightspeed = -rightspeed;
+			  right[i].set(rightspeed);
+			  
+			  System.out.println("The robot is moving.");
+		  }
 		  
 	  }
 	  else {
 		  
-		  left.set(0);
-		  right.set(0);
+		  for (int i = 0; i < number_of_motors; i++) {
+		  left[i].set(0.0);
+		  right[i].set(0.0);
+		  }
 		  
 		  System.out.println("The robot has stopped.");
 		  
